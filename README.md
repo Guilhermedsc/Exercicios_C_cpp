@@ -13,8 +13,6 @@ Resolução em C/C++ dos exercícios de Lógica de Programação e Algoritmos da
       3. [Estruturas de repetição](#estruturas-de-repetição)
       4. [Listas](#listas)
 
-## Motivação
-Estou resolvendo esta lista para disponibilizar as resoluções como material complementar do meu curso de [Lógica de Programação e Algoritmos com C/C++](https://www.udemy.com/course/programarcomc/?referralCode=04DEC481E14D3EFE4B1).
 
 ## Enunciados
 ### Estruturas sequenciais
