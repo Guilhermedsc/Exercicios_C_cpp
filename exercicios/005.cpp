@@ -1,16 +1,16 @@
 /*
 Faça um Programa que converta metros para centímetros.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main(){
     float metros, centimetros;
-    printf("Digite a medida em metros: ");
-    scanf("%f", &metros);
-    centimetros = metros * 100;
-    printf("%.2fm correspondem a %.2fcm", metros, centimetros);
+    std::cout << "Digite o valor em metros para converter em centimetros\n";
+    std::cin >> metros;
+    
+    std::cout << "A em centimetros e: " << metros*100 << "cm";
+
     return 0;
 }
