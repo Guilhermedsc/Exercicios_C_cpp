@@ -2,15 +2,15 @@
 Faça um Programa que peça um número e então mostre a mensagem O número
 informado foi [número]. 
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float numero;
-    printf("Digite um numero: ");
-    scanf("%f", &numero);
-    printf("O numero informado foi [%f]", numero);
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main(){
+    int n=0;
+    std::cout << "Digite um numero\n";
+    std::cin >> n;
+    std::cout << "O numero digitado foi: " << n;
+
     return 0;
 }
