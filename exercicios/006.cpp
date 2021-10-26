@@ -1,16 +1,14 @@
 /*
 Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
+#include <iostream>
+
+int main() {
     float raio, area;
-    printf("Digite o valor do raio: ");
-    scanf("%f", &raio);
-    area = M_PI * pow(raio, 2);
-    printf("A area eh %f", area);
+    std::cout << "Digite o raio do circulo: ";
+    std::cin >> raio;
+
+    area = 3.14 * raio * raio;
+    std::cout << "A area do circulo e: " << area << std::endl;
     return 0;
 }
