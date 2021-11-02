@@ -2,22 +2,18 @@
 Faça um Programa que peça um valor e mostre na tela se o valor é
 positivo ou negativo.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float valor;
-    printf("Digite um numero: ");
-    scanf("%f", &valor);
-    if (valor > 0)
-    {
-        printf("O valor digitado é positivo");
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n=0;
+
+    cout << "Digite um numero: ";
+    cin >> n;
+
+    if(n > 0){
+        cout << "Numero positivo" << endl;
+    }else{
+        cout << "Numero negativo" << endl;
     }
-    else if (valor < 0)
-    {
-        printf("O valor digitado é negativo");
-    }
-    return 0;
 }
