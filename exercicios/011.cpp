@@ -5,26 +5,24 @@ Calcule e mostre:
     a soma do triplo do primeiro com o terceiro.
     o terceiro elevado ao cubo.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    int num1, num2;
-    float num3, a, b, c;
-    printf("Digite um numero inteiro: ");
-    scanf("%i", &num1);
-    printf("Digite outro numero inteiro: ");
-    getchar();
-    scanf("%i", &num2);
-    printf("Digite um numero real: ");
-    getchar();
-    scanf("%f", &num3);
+#include <bits/stdc++.h>
+using namespace std;
 
-    a = (num1 * 2) * (num2 / 2.0);
-    b = (num1 * 3) + num3;
-    c = pow(num3, 3);
-    printf("a - %f\nb - %f\nc - %f", a, b, c);
+int main(){
+    int n1=0, n2=0;
+    float n3=0, a=0, b=0, c=0;
+
+    cout << "Digite dois numeros inteiros e um real, respectivamente:\n";
+    cin >> n1 >> n2 >> n3;
+    endl(cout);
+
+    a = (n1*2) * (n2/2);
+    b = (n1*3) + n3;
+    c = pow(n3, 3);
+
+    cout << "O produto do dobro do primeiro com metade do segundo: " << a << endl;
+    cout << "A soma do triplo do primeiro com o terceiro: " << b << endl;
+    cout << "O terceiro elevado ao cubo: " << c << endl;
+
     return 0;
 }
