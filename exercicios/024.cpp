@@ -1,32 +1,22 @@
 /*
 Faça um Programa que leia três números e mostre o maior deles.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float numero1, numero2, numero3;
-    printf("Digite um numero: ");
-    scanf("%f", &numero1);
-    printf("Digite outro numero: ");
-    getchar();
-    scanf("%f", &numero2);
-    printf("Digite mais um numero: ");
-    getchar();
-    scanf("%f", &numero3);
-    if (numero1 > numero2 && numero1 > numero3)
-    {
-        printf("%f foi o maior numero digitado.", numero1);
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    float n1=0, n2=0, n3=0;
+
+    cout << "Digite 3 numeros respectivamente:" << endl;
+    cin >> n1 >> n2 >> n3;
+
+    if(n1 > n2 && n1 > n3){
+        cout << "O maior numero é: " << n1 << endl;
+    }else if(n2 > n1 && n2 > n3){
+        cout << "O maior numero é: " << n2 << endl;
+    }else{
+        cout << "O maior numero é: " << n3 << endl;
     }
-    else if (numero2 > numero1 && numero2 > numero3)
-    {
-        printf("%f foi o maior numero digitado.", numero2);
-    }
-    else
-    {
-        printf("%f foi o maior numero digitado.", numero3);
-    }
+
     return 0;
 }
