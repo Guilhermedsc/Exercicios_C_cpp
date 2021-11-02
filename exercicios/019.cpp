@@ -1,26 +1,18 @@
 /*
 Faça um Programa que peça dois números e imprima o maior deles.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    int num1, num2;
-    printf("Digite um numero inteiro: ");
-    scanf("%i", &num1);
-    printf("Digite outro numero inteiro: ");
-    getchar();
-    scanf("%i", &num2);
+#include <bits/stdc++.h>
+using namespace std;
 
-    if (num1 > num2)
-    {
-        printf("%i", num1);
+int main(){
+    int n1=0, n2=0;
+
+    cout << "Digite dois numeros respectivamentes:" << endl;
+    cin >> n1 >> n2;
+
+    if(n1 > n2){
+        cout << "Maior: " << n1 << endl;
+    }else{
+        cout << "Maior: " << n2 << endl;
     }
-    else
-    {
-        printf("%i", num2);
-    }
-    return 0;
 }
