@@ -5,27 +5,24 @@ O programa deve calcular a média alcançada por aluno e apresentar:
     A mensagem "Reprovado", se a média for menor do que sete;
     A mensagem "Aprovado com Distinção", se a média for igual a dez.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float nota1, nota2, media;
-    printf("Digite a primeira nota: ");
-    scanf("%f", &nota1);
-    printf("Digite a segunda nota: ");
-    getchar();
-    scanf("%f", &nota2);
-    media = (nota1 + nota2) / 2.0;
-    if (media == 10)
-        printf("Aprovado com Distinção");
-    else if (media >= 7)
-        printf("Aprovado");
-    else
-        printf("Reprovado");
-    //Se o if (ou else if ou else) tem SOMENTE UM COMANDO
-    //terminado por ponto e vírgula (;) não é necessário criar
-    //um bloco (colocar as chaves {})
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    float n1=0, n2=0, media=0;
+
+    cout << "Digite as duas notas respectivamente:" << endl;
+    cin >> n1 >> n2;
+    
+    media = (n1 + n2) / 2;
+
+    if(media == 10){
+        cout << "Aluno aprovado com distinção" << endl;
+    }else if(media >= 7){
+        cout << "Aluno aprovado!" << endl;
+    }else{
+        cout << "Aluno reprovado!" << endl;
+    }
+
     return 0;
-}
+} 
