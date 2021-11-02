@@ -16,54 +16,33 @@ e os respectivos preços em 3 situações:
         Acrescente 10% de folga e sempre arredonde os valores para cima,
         isto é, considere latas cheias.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float metrosQuadrados,
-        metrosQuadradosMaisDez,
-        rendimentoLitro = 6.0,
-        litrosLata = 18.0,
-        precoLata = 80.0,
-        rendimentoLata = rendimentoLitro * litrosLata,
-        litrosGalao = 3.6,
-        precoGalao = 25.0,
-        rendimentoGalao = rendimentoLitro * litrosGalao,
-        precoSomenteLatas,
-        precoSomenteGaloes,
-        precoLatas,
-        precoGaloes,
-        precoLatasEGaloes;
+#include <bits/stdc++.h>
+using namespace std;
 
-    int somenteLatas,
-        somenteGaloes,
-        latas,
-        galoes;
+int main(){
+    float metrosQuadrados, metrosQuadradosMaisDez, rendimentoLitro = 6.0, litrosLata = 18.0, precoLata = 80.0,
+        rendimentoLata = rendimentoLitro * litrosLata, litrosGalao = 3.6, precoGalao = 25.0, rendimentoGalao = rendimentoLitro * litrosGalao,
+        precoSomenteLatas, precoSomenteGaloes, precoLatas, precoGaloes, precoLatasEGaloes;
+    
+    int somenteLatas, somenteGaloes, latas, galoes;
 
-    printf("Digite a área em m² a ser pintada: ");
-    scanf("%f", &metrosQuadrados);
+    cout << "Digite o tamanho em metros quadrados da área a ser pintada: ";
+    cin >> metrosQuadrados;
+
     metrosQuadradosMaisDez = metrosQuadrados * 1.1;
-
     somenteLatas = ceil(metrosQuadrados / rendimentoLata);
     somenteGaloes = ceil(metrosQuadrados / rendimentoGalao);
     latas = floor(metrosQuadradosMaisDez / rendimentoLata);
-    //O módulo (resto de uma divisão) só pode ser feito com números inteiros
-    galoes = ceil(
-        ((int)metrosQuadradosMaisDez % (int)rendimentoLata) / rendimentoGalao);
-
+    galoes = ceil(((int)metrosQuadradosMaisDez % (int)rendimentoLata) / rendimentoGalao);
     precoSomenteLatas = somenteLatas * precoLata;
     precoSomenteGaloes = somenteGaloes * precoGalao;
     precoLatas = latas * precoLata;
     precoGaloes = galoes * precoGalao;
     precoLatasEGaloes = precoLatas + precoGaloes;
 
-    printf("Somente Latas: %i, custando R$%.2f\n",
-           somenteLatas, precoSomenteLatas);
-    printf("Somente Galões: %i, custando R$%.2f\n",
-           somenteGaloes, precoSomenteGaloes);
-    printf("Latas: %i , Galões: %i, custando R$%.2f",
-           latas, galoes, precoLatasEGaloes);
+    cout << "Somente latas: " << somenteLatas << ", custando R$ " << precoSomenteLatas << endl;
+    cout << "Somente galões: " << somenteGaloes << ", custando R$ " << precoSomenteGaloes << endl;
+    cout << "Latas: " << latas << "Galões: " << galoes << ", custando R$ " << precoLatasEGaloes << endl;
+
     return 0;
 }
