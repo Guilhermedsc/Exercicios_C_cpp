@@ -19,36 +19,28 @@ calcule os descontos e o salário líquido, conforme a tabela abaixo:
 
 Obs.: Salário Bruto - Descontos = Salário Líquido.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float salarioHora,
-        horasTrabalhadas,
-        IR,
-        INSS,
-        sindicato,
-        salarioLiquido,
-        salarioBruto;
+#include <bits/stdc++.h>
+using namespace std;
 
-    printf("Digite quanto voce recebe por hora: ");
-    scanf("%f", &salarioHora);
-    printf("Digite quantas horas voce trabalhou esse mes: ");
-    getchar();
-    scanf("%f", &horasTrabalhadas);
+int main(){
+    float valor_hora=0, hora_mes=0;
+    float salario_bruto=0, IR=0, INSS=0, sindicato=0, salario_liquido=0;
 
-    salarioBruto = salarioHora * horasTrabalhadas;
-    IR = salarioBruto * (11.0 / 100);
-    INSS = salarioBruto * (8.0 / 100);
-    sindicato = salarioBruto * (5.0 / 100);
-    salarioLiquido = salarioBruto - IR - INSS - sindicato;
+    cout << "Digite quanto ganha por hora e quantas horas trabalha por mes: " << endl;
+    cin >> valor_hora >> hora_mes;
+    endl(cout);
+    
+    salario_bruto = valor_hora * hora_mes;
+    IR =  salario_bruto * (11/100);
+    INSS = salario_bruto * (8/100);
+    sindicato = salario_bruto * (5/100);
+    salario_liquido = salario_bruto - IR - INSS - sindicato;
 
-    printf("+ Salário Bruto : R$%.2f\n", salarioBruto);
-    printf("- IR (11%) : R$%.2f\n", IR);
-    printf("- INSS (8%) : R$%.2f\n", INSS);
-    printf("- Sindicato ( 5%) : R$%.2f\n", sindicato);
-    printf("= Salário Liquido : R$%.2f", salarioLiquido);
+    cout << "Salario bruto: R$ " << salario_bruto << endl;
+    cout << "IR: R$ " << IR << endl;
+    cout << "INSS: R$ " << INSS << endl;
+    cout << "Sindicato: R$ " << sindicato << endl;
+    cout << "Salario liquido: R$ " << salario_liquido << endl;
+
     return 0;
 }
