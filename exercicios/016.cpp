@@ -8,26 +8,19 @@ quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00.
 Informe ao usuário a quantidades de latas de tinta
 a serem compradas e o preço total.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float areaDaParede,
-        rendimentoDoLitro = 3.0,
-        litrosPorLata = 18.0,
-        precoDaLata = 80.0,
-        precoTotal;
-    int latasAComprar;
+#include <bits/stdc++.h>
+using namespace std;
 
-    printf("Digite a area da parede em metros quadrados: ");
-    scanf("%f", &areaDaParede);
+int main(){
+    float area_parede=0, rendimentoDoLitro = 3.0, litrosPorLata = 18.0, precoDaLata = 80.0, precoTotal=0;
+    int latasAComprar=0;
 
-    latasAComprar = ceil(areaDaParede / (rendimentoDoLitro * litrosPorLata));
-    //ceil é uma função da biblioteca matemática
+    cout << "Digite a area da parede em metros quadrados: ";
+    cin >> area_parede;
+
+    latasAComprar = ceil(area_parede/ (rendimentoDoLitro * litrosPorLata));
     precoTotal = latasAComprar * precoDaLata;
-    printf("Voce deve comprar %i lata(s), custando R$%.2f",
-           latasAComprar, precoTotal);
+
+    cout << "Voce precisara de " << latasAComprar << " latas de tinta para pintar a parede, custando R$: " << precoTotal << endl;
     return 0;
 }
