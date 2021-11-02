@@ -1,34 +1,30 @@
 /*
 Faça um Programa que leia três números e mostre o maior e o menor deles.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float numero1, numero2, numero3;
-    printf("Digite um numero: ");
-    scanf("%f", &numero1);
-    printf("Digite outro numero: ");
-    getchar();
-    scanf("%f", &numero2);
-    printf("Digite mais um numero: ");
-    getchar();
-    scanf("%f", &numero3);
+#include <bits/stdc++.h>
+using namespace std;
 
-    if (numero1 > numero2 && numero1 > numero3)
-        printf("%f foi o maior numero digitado.", numero1);
-    else if (numero2 > numero1 && numero2 > numero3)
-        printf("%f foi o maior numero digitado.", numero2);
-    else
-        printf("%f foi o maior numero digitado.", numero3);
+int main(){
+    float v[3];
+    float maior=0, menor=0;
 
-    if (numero1 < numero2 && numero1 < numero3)
-        printf("\n%f foi o menor numero digitado.", numero1);
-    else if (numero2 < numero1 && numero2 < numero3)
-        printf("\n%f foi o menor numero digitado.", numero2);
-    else
-        printf("\n%f foi o menor numero digitado.", numero3);
+    cout << "Digite 3 numeros respectivamente:" << endl;
+    for(int i=0; i<3; i++){
+        cin >> v[i];
+    }
+    
+    maior = v[0];
+    menor = v[0];
+
+    for(int i=0; i<3; i++){
+        if(v[i] > maior){
+            maior = v[i];
+        }
+        if(v[i] < menor){
+            menor = v[i];
+        }
+    }
+    
+    cout << "Maior: " << maior << "\nMenor: " << menor << endl;
     return 0;
 }
