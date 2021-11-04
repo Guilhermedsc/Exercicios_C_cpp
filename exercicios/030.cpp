@@ -24,48 +24,34 @@ No exemplo o valor da hora é 5 e a quantidade de hora é 220.
         Total de descontos              : R$  165,00
         Salário Liquido                 : R$  935,00
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float valorDaHora,
-        horasTrabalhadas,
-        salarioBruto,
-        descontoIr,
-        IR,
-        INSS,
-        FGTS,
-        totalDeDescontos,
-        salarioLiquido;
+#include <bits/stdc++.h>
+using namespace std;
 
-    printf("Digite quanto você recebe por hora: ");
-    scanf("%f", &valorDaHora);
-    printf("Digite quantas horas você trabalhou esse mês: ");
-    getchar();
-    scanf("%f", &horasTrabalhadas);
-    salarioBruto = valorDaHora * horasTrabalhadas;
-    if (salarioBruto <= 900)
-        descontoIr = 0.0;
-    else if (salarioBruto <= 1500)
-        descontoIr = 5;
-    else if (salarioBruto <= 2500)
-        descontoIr = 10;
-    else
-        descontoIr = 20;
+int main(){
+    float valor_hora=0, horas_trabalhadas=0, salario_bruto=0, inss=0, ir=0, descontoIR=0, salario_liquido=0, fgts=0, desconto_total=0;
 
-    IR = salarioBruto * (descontoIr / 100.0);
-    INSS = salarioBruto * (10 / 100.0);
-    FGTS = salarioBruto * (11 / 100.0);
-    totalDeDescontos = IR + INSS;
-    salarioLiquido = salarioBruto - totalDeDescontos;
+    cout << "Digite o quanto voce ganha por hora e quantas horas voce trabaçha por mes: \n";
+    cin >> valor_hora >> horas_trabalhadas;
+    endl(cout);
 
-    printf("\nSalário Bruto     : R$%.2f", salarioBruto);
-    printf("\n(-) IR (5%%)       : R$%.2f", IR);
-    printf("\n(-) INSS (10%%)    : R$%.2f", INSS);
-    printf("\nFGTS (11%%)        : R$%.2f", FGTS);
-    printf("\nTotal de descontos: R$%.2f", totalDeDescontos);
-    printf("\nSalário Liquido   : R$%.2f", salarioLiquido);
+    salario_bruto = valor_hora * horas_trabalhadas;
+
+    if(salario_bruto <= 900) descontoIR = 0;
+    else if(salario_bruto <= 1500) descontoIR = 5;
+    else if(salario_bruto <= 2500) descontoIR = 10;
+    else descontoIR = 20;
+
+    inss = salario_bruto * 0.1;
+    ir = salario_bruto * (descontoIR/100);
+    fgts = salario_bruto * 0.11;
+    desconto_total = inss + ir;
+    salario_liquido = salario_bruto - desconto_total;
+
+    cout << "Salario Bruto: " << salario_bruto << endl;
+    cout << "(-) Desconto IR: " << ir << endl;
+    cout << "(-) Desconto INSS: " << inss << endl;
+    cout << "FGTS: " << fgts << endl;
+    cout << "Total de descontos: " << desconto_total << endl;
+    cout << "Salario Liquido: " << salario_liquido << endl;
     return 0;
 }
