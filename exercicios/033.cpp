@@ -11,34 +11,25 @@ Dicas:
     Triângulo Isósceles: quaisquer dois lados iguais;
     Triângulo Escaleno: três lados diferentes;
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float lado1, lado2, lado3;
-    printf("Digite o primeiro lado do triângulo: ");
-    scanf("%f", &lado1);
-    printf("Digite o segundo lado do triângulo: ");
-    scanf("%f", &lado2);
-    printf("Digite o terceiro lado do triângulo: ");
-    scanf("%f", &lado3);
+#include <bits/stdc++.h>
+using namespace std;
 
-    if (
-        (lado1 + lado2 > lado3) 
-        && (lado1 + lado3 > lado2) 
-        && (lado2 + lado3 > lado1)
-    )
-    {
-        if ((lado1 == lado2) && (lado2 == lado3))
-            printf("É um triângulo equilátero!");
-        else if ((lado1 == lado2) || (lado1 == lado3) || (lado2 == lado3))
-            printf("É um triângulo isósceles!");
-        else
-            printf("É um triângulo escaleno!");
-    }
-    else
-        printf("Não é um triângulo!");
+int main(){
+    float lado1=0, lado2=0, lado3=0;
+    int eh_triangulo=0;
+
+    cout << "Digite o valor dos 3 lados respectivamente: " << endl;
+    cin >> lado1 >> lado2 >> lado3;
+
+    if(lado1+lado2>lado3 && lado1+lado3>lado2 && lado2+lado3>lado1){ 
+        eh_triangulo=1;
+        cout << "Eh triangulo" << endl;
+    }else cout << "Nao eh um triangulo" << endl;
+
+    if(eh_triangulo==1){
+        if(lado1==lado2 && lado2==lado3) cout << "Equilatero" << endl;
+        else if(lado1==lado2 || lado1==lado3 || lado2==lado3) cout << "Isoceles" << endl;
+        else cout << "Escaleno" << endl;
+        
     return 0;
 }
