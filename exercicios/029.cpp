@@ -17,33 +17,22 @@ seguinte critério, baseado no salário atual:
         o valor do aumento;
         o novo salário, após o aumento.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
-int main()
-{
-    float salarioAnterior,
-        percentualDeAumento,
-        diferencaEntreSalarios,
-        salarioAtual;
+#include <bits/stdc++.h>
+using namespace std;
 
-    printf("Digite seu salário atual: ");
-    scanf("%f", &salarioAnterior);
+int main(){
+    float salario=0, porc=0;
 
-    if (salarioAnterior <= 280)
-        percentualDeAumento = 20;
-    else if (salarioAnterior <= 750)
-        percentualDeAumento = 15;
-    else if (salarioAnterior <= 1500)
-        percentualDeAumento = 10;
-    else
-        percentualDeAumento = 5;
-    diferencaEntreSalarios = salarioAnterior * (percentualDeAumento / 100.0);
-    salarioAtual = salarioAnterior + diferencaEntreSalarios;
-    printf("\nSeu salário antes do reajuste era de R$%.2f", salarioAnterior);
-    printf("\nSeu salário foi aumentado em %.1f%%", percentualDeAumento);
-    printf("\nSeu salário foi aumentado em R$%.2f", diferencaEntreSalarios);
-    printf("\nSeu salário atual é de R$%.2f", salarioAtual);
+    cout << "Digite o salario: ";
+    cin >> salario;
+
+    if(salario <= 280) porc = 20;
+    else if(salario <= 700) porc = 15;
+    else if(salario <= 1500) porc = 10;
+    else porc = 5;
+
+    salario = salario + (salario * porc / 100);
+    
+    cout << "O salario com o aumento de " << porc << "% é de: " << salario<<endl;
     return 0;
 }
