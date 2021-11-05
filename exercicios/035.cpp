@@ -2,18 +2,17 @@
 Faça um Programa que peça um número correspondente a um determinado ano e em
 seguida informe se este ano é ou não bissexto.
 */
-#include <cmath>
-#include <cstring>
-#include <ctype.h>
-#include <stdio.h>
-int main()
-{
-    int ano;
-    printf("Digite um ano: ");
-    scanf("%i", &ano);
-    if (ano % 4 == 0)
-        printf("%i é bissexto!", ano);
-    else
-        printf("%i não é bissexto!", ano);
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int ano=0;
+
+    cout << "Digite o ano: ";
+    cin >> ano;
+
+    if(ano%4==0 && ano%100!=0 || ano%400==0) cout << "O ano " << ano << " é bissexto." << endl;
+    else cout << "O ano " << ano << " não é bissexto." << endl;
+
     return 0;
 }
