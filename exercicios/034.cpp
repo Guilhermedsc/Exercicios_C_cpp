@@ -15,42 +15,28 @@ informando ao usuário nas seguintes situações:
     Se o delta for positivo, a equação possui duas raiz reais;
         informe-as ao usuário;
 */
-#include <cmath>
-#include <cstring>
-#include <ctype.h>
-#include <stdio.h>
-int main()
-{
-    float a, b, c, delta, raiz1, raiz2;
-    printf("Digite o valor de a: ");
-    scanf("%f", &a);
-    if (a == 0)
-        printf("Não é uma equação do segundo grau");
-    else
-    {
-        printf("Digite o valor de b: ");
-        getchar();
-        scanf("%f", &b);
-        printf("Digite o valor de c: ");
-        getchar();
-        scanf("%f", &c);
-        delta = pow(b, 2) - (4 * a * c);
-        if (delta < 0)
-            printf("Delta menor que 0. Não há raízes reais.");
-        else if (delta == 0)
-        {
-            raiz1 = (-b) / (2 * a);
-            printf("Delta é zero. A raíz é %f, raiz", raiz1);
-        }
-        else
-        {
-            raiz1 = (-b + sqrt(delta)) /
-                    (2 * a); // sqrt é a função de raiz quadrada da biblioteca
-                             // matemática
-            raiz2 = (-b - sqrt(delta)) / (2 * a);
-            printf("Delta maior que zero. A raíz 1 é %f, e a raiz 2 é %f",
-                   raiz1, raiz2);
-        }
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    float a=0, b=0, c=0, delta=0, x1=0, x2=0;
+    
+    cout << "Digite o valor de a: ";
+    cin >> a;
+
+    if(a == 0) cout << "Nao eh uma equacao do segundo grau" << endl;
+    else{
+        cout << "Digite o valor de b e c: " << endl;
+        cin >> b >> c;
     }
+
+    delta = b*b - 4*a*c;
+    if(delta < 0) cout << "Nao existem raizes reais" << endl;
+    else{
+        x1 = (-b + sqrt(delta))/(2*a);  // sqrt(delta) = raiz quadrada de delta
+        x2 = (-b - sqrt(delta))/(2*a);
+        cout << "As raizes sao: " << x1 << " e " << x2 << endl;
+    }
+
     return 0;
 }
