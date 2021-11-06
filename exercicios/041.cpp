@@ -8,45 +8,37 @@ frase que diga se o número é:
     positivo ou negativo;
     inteiro ou decimal.
 */
-#include <cmath>
-#include <cstring>
-#include <ctype.h>
-#include <stdio.h>
-int main()
-{
-    float numero1, numero2, resultado;
-    char op;
-    printf("Digite um número: ");
-    scanf("%f", &numero1);
-    printf("Digite outro número: ");
-    scanf("%f", &numero2);
-    printf("Digite qual operação (+, -, * ou /) deseja realizar: ");
-    scanf("%s", &op);
+#include <bits/stdc++.h>
+using namespace std;
 
-    if (op == '+')
-        resultado = numero1 + numero2;
-    else if (op == '-')
-        resultado = numero1 - numero2;
-    else if (op == '*')
-        resultado = numero1 * numero2;
-    else if (op == '/')
-        resultado = numero1 / numero2;
+int main(){
+    float n1=0, n2=0, res=0;
+    char sinal=0;
 
-    printf("O resultado é: \n");
+    while(true){
+        cout << "\nDigite dois numeros e o sinal da operacao :" << endl;
+        cout << "$ ";
+        cin >> n1;
+        cout << "$ ";
+        cin >> n2;
+        cout << "# "; 
+        cin >> sinal;
 
-    if ((int)resultado % 2 == 0)
-        printf("Par");
-    else
-        printf("Ímpar");
+        if(sinal == '+') res = n1 + n2;
+        else if(sinal == '-') res = n1 - n2;
+        else if(sinal == '*') res = n1 * n2;
+        else if(sinal == '/') res = n1 / n2;
+        else cout << "Operacao invalida" << endl;
 
-    if (resultado >= 0)
-        printf("\nPositivo");
-    else
-        printf("\nNegativo");
+        cout << "Resultado : " << res;
+        if((int)res % 2 == 0) cout << "  [Par ";
+        else cout << "  [Impar ";
 
-    if (floor(resultado) == resultado)
-        printf("\nInteiro");
-    else
-        printf("\nDecimal");
+        if(res > 0) cout << "Positivo ";
+        else cout << "Negativo ";
+
+        if((int)res == res) cout << "Inteiro]\n";
+        else cout << "Decimal]";
+    }
     return 0;
 }
