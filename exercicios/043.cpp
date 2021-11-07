@@ -12,36 +12,27 @@ o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina),
 calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do
 litro da gasolina é R$ 2,50 o preço do litro do álcool é R$ 1,90.
 */
-#include <cmath>
-#include <cstring>
-#include <ctype.h>
-#include <stdio.h>
-int main()
-{
-    float litros, preco;
-    char combustivel;
-    printf("Digite quantos litros você quer abastecer: ");
-    scanf("%f", &litros);
-    printf("Digite A para álcool ou G para gasolina: ");
-    getchar();
-    scanf("%s", &combustivel);
+#include <bits/stdc++.h>
+using namespace std;
 
-    if (combustivel == 'A' || combustivel == 'a')
-    {
-        preco = litros * 1.9;
-        if (litros <= 20)
-            preco -= 1.9 * litros * 3 / 100.0;
-        else
-            preco -= 1.9 * litros * 5 / 100.0;
+int main(){
+    char tipo=0;
+    float preco=0, litros=0;
+
+    cout << "Digite a quantidade de litros e o tipo do combustivel (A-álcool, G-gasolina): ";
+    cin >> litros >> tipo;
+    
+    if(toupper(tipo) == 'A'){
+        preco = litros * 1.90;
+        if(litros <= 20) preco -= 1.90 * litros * 0.03;
+        else preco -= 1.90 * litros * 0.05;
+
+    }else if(toupper(tipo) == 'G'){
+        preco = litros * 2.50;
+        if(litros <= 20) preco -= 2.50 * litros * 0.04;
+        else preco -= 2.50 * litros * 0.06;
     }
-    else if (combustivel == 'G' || combustivel == 'g')
-    {
-        preco = litros * 2.5;
-        if (litros <= 20)
-            preco -= 2.5 * litros * 4 / 100.0;
-        else
-            preco -= 2.5 * litros * 6 / 100.0;
-    }
-    printf("O preço a pagar é R$%.2f", preco);
+
+    cout << "O preço a pagar é: R$ " << preco << endl;
     return 0;
 }
